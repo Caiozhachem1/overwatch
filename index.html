@@ -47,7 +47,7 @@ a{color:var(--green)}
   }
   const base = (await current()).replace(/\/$/, '');
   let path = location.hash.startsWith('#/') ? location.hash.slice(1) : '/';
-  if (!/^\/(invite|reset|magic|embed|login|account|admin)?([\/?].*)?$/.test(path)) path = '/';
+  if (!/^\/(invite|reset|magic|verify|signup|forgot|terms|embed|login|account|admin)?([\/?].*)?$/.test(path)) path = '/';
   try {
     const ctl = new AbortController(); setTimeout(() => ctl.abort(), 6000);
     await fetch(base + '/healthz', {mode: 'no-cors', signal: ctl.signal, cache: 'no-store'});
